@@ -1,0 +1,32 @@
+{
+    "autoDocstring.customTemplatePath": "C:\\Projects\\custom_docstring_fmt.mustache",
+    "editor.suggestSelection": "first",
+    "editor.rulers": [80,120],
+    "files.exclude": {
+        "**/*.pyc": {
+            "when": "$(basename).py"
+        },
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },    
+    "python.jediEnabled": false,
+    "python.formatting.blackPath": "C:\\Python36\\Scripts\\black",
+    "python.formatting.blackArgs": ["-l 79"],
+    "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "C:\\Python36\\Scripts\\pylint",    
+    "search.location": "sidebar",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": ["-l"],
+    "update.channel": "none",
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Monokai",
+    "workbench.sideBar.location": "left",
+    "workbench.editor.enablePreview": false
+}

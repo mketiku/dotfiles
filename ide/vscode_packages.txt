@@ -1,0 +1,9 @@
+// code --list-extensions
+// code --install-extension
+
+coderfee.open-html-in-browser
+eamodio.gitlens
+emmanuelbeziat.vscode-great-icons
+HookyQR.beautify
+mohsen1.prettify-json
+ms-python.python

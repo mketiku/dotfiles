@@ -1,0 +1,26 @@
+{
+    "editor.suggestSelection": "first",
+    "editor.rulers": [80,120],
+    "files.exclude": {
+        "**/*.pyc": {
+            "when": "$(basename).py"
+        },
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },    
+    "python.formatting.blackArgs": ["-l 79"],
+    "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": true,
+    "search.location": "sidebar",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "update.channel": "none",
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Monokai",
+    "workbench.sideBar.location": "left",
+    "workbench.editor.enablePreview": false
+}

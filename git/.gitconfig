@@ -1,0 +1,159 @@
+[user]
+	email = mketiku@gmail.com
+	name= michael ketiku
+[push]
+	default = simple
+[color]
+	ui=auto
+	status = auto
+	diff = auto
+	branch = auto
+[alias]
+	a = add --all
+	#############
+	ap = apply
+	as = apply --stat
+	ac = apply --check
+	#############
+	ama = am --abort
+	amr = am --resolved
+	ams = am --skip
+	#############
+	#############
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	#############
+	br = branch
+	bra = branch -a
+	brd = branch -d
+	brr = branch -r
+	# Delete a branch
+	brdel = branch -D
+	# Show all branches
+	br = branch -av
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cem = commit --allow-empty -m
+	cam = commit -am
+	cd = commit --amend
+	cad = commit -a --amend
+	ced = commit --allow-empty --amend
+	############
+	co = checkout
+	cob =  checkout -b
+	#############
+	d = diff
+	dc = diff --cached
+	dk = diff --check
+	dp = diff --patience
+	dck = diff --cached --check
+	#############
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	#############
+	fk = fsck
+	#############
+	g = grep -p
+	#############
+	l = log --oneline
+	lg = log --oneline --graph --decorate
+	#############
+	ls = ls-files
+	#############
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	#############
+	pr = prune -v
+	#############
+	ps = push
+	psf = push -f
+	psu = push -u
+	pso = push origin
+	psao = push --all origin
+	psfo = push -f origin
+	psuo = push -u origin
+	psom = push origin master
+	psfom = push -f origin master
+	psuom = push -u origin master
+	#############
+	pl = pull
+	plu = pull -u
+	plo = pull origin
+	plp = pull upstream
+	plom = pull origin master
+	plpm = pull upstream master
+	#############
+	pb = pull --rebase
+	pbo = pull --rebase origin
+	pbp = pull --rebase upstream
+	pbom = pull --rebase origin master
+	pbpm = pull --rebase upstream master
+	#############
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	#############
+	re = reset
+	rh = reset HEAD
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	rehh = reset --hard HEAD
+	remh = reset --mixed HEAD
+	resh = reset --soft HEAD
+	#############
+	r = remote
+	ra = remote add
+	rr = remote rm
+	rv = remote -v
+	rm = remote rename
+	rp = remote prune
+	rs = remote show
+	rao = remote add origin
+	rau = remote add upstream
+	rso = remote show origin
+	rsu = remote show upstream
+	rpo = remote prune origin
+	rpu = remote prune upstream
+	#############
+	#############
+	sa = stash apply
+	sc = stash clear	# View a pretty git log with branch tree
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	s = status
+	st = status
+	sb = status -s -b
+	sw = stash show
+	#############
+	w = show
+	wp = show -p
+	wr = show -p --no-color
+	#############
+  	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+	# View a pretty git log with branch tree
+	lsf = "!git ls-files | grep -i"
+	hist = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	# Get to know who the repository belongs to
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+	# clone bare branch
+	barebranch = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
+	flat = clone --depth 1
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	# Start a new local repository and perform initial commit
+	this = !git init && git add -A && git commit -m \"Initial commit.\"
+ 	# Which files are receiving the most "love"
+  	churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
+	g = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+ 	#Remove deleted files
+ 	r = !git ls-files -z --deleted | xargs -0 git rm

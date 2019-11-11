@@ -1,0 +1,4 @@
+git
+json reindent
+package control
+side bar
