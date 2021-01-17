@@ -2,8 +2,10 @@
 # Created with influence from:
 #   - https://github.com/junegunn/fzf/blob/master/install
 #   - https://github.com/pi-hole/pi-hole/blob/master/automated%20install/basic-install.sh
+# Run pihole install separately then copy and paste in setupVars.conf to etc/pihole dir
 
-# Usage: bash dev.sh
+
+# Usage: bash dev.sh or curl -sSl https://raw.githubusercontent.com/mketiku/dotfiles/master/dev.sh | bash
 
 #unalias cp = cp -i to allow overwrites
 if alias cp 2>/dev//null;
@@ -195,15 +197,15 @@ then
     fi
 fi
 
-# pihole
-if [ $install_pihole -eq 1 ];
-# wlan0 interface ; 
-then
-    if ! [ -d /etc/.pihole ];
-    then 
-        sudo curl -sSL https://install.pi-hole.net | bash
-    fi
-fi
+# # pihole
+# if [ $install_pihole -eq 1 ];
+# # wlan0 interface ; 
+# then
+#     if ! [ -d /etc/.pihole ];
+#     then 
+#         sudo curl -sSL https://install.pi-hole.net | bash
+#     fi
+# fi
 
 # plex
 # https://www.how2shout.com/how-to/install-plex-media-server-ubuntu-step-step.html
