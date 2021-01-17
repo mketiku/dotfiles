@@ -157,8 +157,7 @@ if [ $install_fzf -eq 1 ];
 then
     if ! [ -d ~/.fzf/ ];
     then 
-        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-        yes | ~/.fzf/install
+        yes | sudo apt-get install fzf
     fi
 fi
 
@@ -167,7 +166,7 @@ if [ $install_npm -eq 1 ];
 then
     if ! [ -d ~/.config/nvm ];
     then
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
     fi
     if is_command nvm;
     then
@@ -188,7 +187,7 @@ if [ $install_oh_my_zsh -eq 1 ];
 then
     if ! [ -d ~/.oh-my-zsh ];
     then 
-        yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
                 
         BACKUP_ZSHRC="$(~/.zshrc)-$(date +%Y-%m-%d_%H-%M-%S)"
         mv ~/.zshrc "${BACKUP_ZSHRC}"
@@ -221,6 +220,7 @@ fi
 #
 #    fi
 # fi
+# or bash -c "$(wget -qO - https://raw.githubusercontent.com/mrworf/plexupdate/master/extras/installer.sh)"
 
 
 # prompt for a reboot
